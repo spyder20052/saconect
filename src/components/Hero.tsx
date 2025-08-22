@@ -27,6 +27,7 @@ const slides: Slide[] = [
   },
 ]
 
+
 export function Hero() {
   const [index, setIndex] = useState(0)
   const [animating, setAnimating] = useState(false)
