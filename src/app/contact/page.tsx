@@ -1,6 +1,7 @@
 import PageHero from '@/components/PageHero'
 import Container from '@/components/Container'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import ContactFormSwitcher from '@/components/ContactFormSwitcher'
 
 export const metadata = { title: 'Contact | SACONECT', description: 'Écrivez-nous pour discuter de votre projet.' }
 
@@ -13,58 +14,9 @@ export default function ContactPage() {
       <section className="relative bg-gradient-to-b from-white to-slate-50/60">
         <Container className="py-12">
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* Form card */}
+            {/* Switcher / Forms */}
             <div className="lg:col-span-2">
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
-                <h2 className="text-xl font-semibold text-slate-900">Envoyez-nous un message</h2>
-                <p className="mt-1 text-slate-600 text-sm">Nous revenons vers vous sous 24h ouvrées.</p>
-                <form className="mt-6 grid gap-5">
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="text-sm text-slate-700">Nom</label>
-                      <input
-                        required
-                        className="mt-1 w-full h-11 rounded-lg border border-slate-200 px-3 outline-none focus:ring-2 focus:ring-saco-blue/30 focus:border-saco-blue transition"
-                        placeholder="Votre nom"
-                        name="name"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm text-slate-700">Email</label>
-                      <input
-                        required
-                        type="email"
-                        className="mt-1 w-full h-11 rounded-lg border border-slate-200 px-3 outline-none focus:ring-2 focus:ring-saco-blue/30 focus:border-saco-blue transition"
-                        placeholder="vous@domaine.com"
-                        name="email"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-sm text-slate-700">Sujet</label>
-                    <input
-                      className="mt-1 w-full h-11 rounded-lg border border-slate-200 px-3 outline-none focus:ring-2 focus:ring-saco-blue/30 focus:border-saco-blue transition"
-                      placeholder="Sujet"
-                      name="subject"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-sm text-slate-700">Message</label>
-                    <textarea
-                      required
-                      className="mt-1 w-full min-h-[140px] rounded-lg border border-slate-200 p-3 outline-none focus:ring-2 focus:ring-saco-blue/30 focus:border-saco-blue transition"
-                      placeholder="Votre message..."
-                      name="message"
-                    />
-                  </div>
-                  <div className="flex items-center justify-between gap-4">
-                    <p className="text-xs text-slate-500">En cliquant, vous acceptez notre <a className="underline hover:text-saco-blue" href="/legal/politique-confidentialite">politique de confidentialité</a>.</p>
-                    <button type="submit" className="inline-grid place-items-center h-11 px-5 rounded-lg bg-saco-blue text-white hover:bg-saco-turquoise transition">
-                      Envoyer
-                    </button>
-                  </div>
-                </form>
-              </div>
+              <ContactFormSwitcher />
             </div>
 
             {/* Contact details card */}

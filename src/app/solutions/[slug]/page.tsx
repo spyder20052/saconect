@@ -251,16 +251,7 @@ export default function SolutionDetailPage({ params }: { params: { slug: string 
   const c = CONTENT[params.slug] || CONTENT['smart-agriculture']
   return (
     <main>
-      <PageHero title={d.title} subtitle={d.subtitle} image={d.image} />
-
-      {/* Back to solutions */}
-      <section className="relative bg-gradient-to-b from-white to-slate-50/60">
-        <Container className="py-6">
-          <Link href="/solutions" className="inline-flex items-center text-saco-blue hover:underline">
-            <span className="mr-2">←</span> Retour aux solutions
-          </Link>
-        </Container>
-      </section>
+      <PageHero title={d.title} subtitle={d.subtitle} image={d.image} backHref="/solutions" backLabel="Retour aux solutions" />
 
       {/* Unified layout for all smart pages */}
       {/* Intro and context */}

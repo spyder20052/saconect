@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Container from '@/components/Container'
+import PageHero from '@/components/PageHero'
+import { Factory, Server, Wrench, Code, ChevronRight } from 'lucide-react'
 
 export const metadata = { title: 'Écosystème IoT | SACONECT', description: 'Du capteur à la plateforme : fabricants, plateformes, intégrateurs, développeurs.' }
 
@@ -10,36 +12,33 @@ const CARDS = [
   { id: 'developpeurs', href: '/developpeurs', title: 'Développeurs', desc: 'APIs, SDKs et documentation pour bâtir vite et bien.' },
 ]
 
+const ICONS: Record<string, JSX.Element> = {
+  fabricants: <Factory className="h-5 w-5 text-saco-blue" />,
+  plateformes: <Server className="h-5 w-5 text-saco-blue" />,
+  integrateurs: <Wrench className="h-5 w-5 text-saco-blue" />,
+  developpeurs: <Code className="h-5 w-5 text-saco-blue" />,
+}
+
 export default function EcosystemePage() {
   return (
     <main>
-      {/* Custom hero with overlay cards */}
-      <section className="relative">
-        <div className="relative h-[320px] md:h-[420px]">
-          <Image
-            src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2000&auto=format&fit=crop"
-            alt="Écosystème IoT"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/25 to-transparent" />
-          <Container>
-            <div className="absolute left-0 right-0 md:left-auto md:right-auto top-1/2 -translate-y-1/2 px-4 md:px-0">
-              <h1 className="text-white text-3xl md:text-4xl font-semibold">Écosystème IoT</h1>
-              <p className="text-white/90 mt-3 max-w-2xl">Du capteur à la plateforme, un continuum fiable et simple. Accédez rapidement à chaque acteur clé de l’écosystème.</p>
-            </div>
-          </Container>
-        </div>
-        {/* Floating cards overlapping the photo */}
+      {/* Standard header */}
+      <PageHero title="Écosystème IoT" subtitle="Du capteur à la plateforme, accédez à chaque acteur clé de l’écosystème." />
+
+      {/* Cards below header */}
+      <section className="mt-8 md:mt-12">
         <Container>
-          <div className="-mt-10 md:-mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {CARDS.map(card => (
-              <a key={card.id} href={card.href} className="group rounded-xl border border-white/60 bg-white/90 backdrop-blur shadow-sm px-4 py-5 hover:bg-white transition">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-sm font-semibold text-slate-900">{card.title}</h3>
-                  <span className="text-saco-blue opacity-0 group-hover:opacity-100 transition">→</span>
+              <a key={card.id} href={card.href} className="group rounded-xl border bg-white shadow-sm px-4 py-5 hover:bg-white transition">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="inline-flex items-center gap-2">
+                    <span className="h-9 w-9 rounded-lg bg-saco-blue/10 text-saco-blue grid place-items-center">
+                      {ICONS[card.id]}
+                    </span>
+                    <h3 className="text-sm font-semibold text-slate-900">{card.title}</h3>
+                  </div>
+                  <ChevronRight className="h-4 w-4 text-saco-blue opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition" />
                 </div>
                 <p className="text-sm text-slate-600 mt-2">{card.desc}</p>
               </a>
@@ -48,7 +47,7 @@ export default function EcosystemePage() {
         </Container>
       </section>
 
-      {/* Concise intro only (avoid duplicate cards) */}
+      {/* Concise intro */}
       <section className="relative">
         <Container className="py-12">
           <div className="max-w-3xl">

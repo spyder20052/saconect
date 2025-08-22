@@ -7,6 +7,9 @@ export type Post = {
   category: 'Produit' | 'Cas client' | 'Partenariat' | 'Événement'
   excerpt: string
   content: string[]
+  // Optional video support
+  videoEmbedUrl?: string // e.g. YouTube/Vimeo embed URL
+  videoMp4Url?: string // direct mp4 if hosted
 }
 
 export const POSTS: Post[] = [
@@ -22,6 +25,7 @@ export const POSTS: Post[] = [
       "Nous dévoilons notre nouvelle passerelle multi‑réseaux, pensée pour des déploiements rapides et robustes.",
       "Elle intègre des fonctions de gestion à distance, une sécurité renforcée et une compatibilité élargie.",
     ],
+    videoEmbedUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U',
   },
   {
     id: 2,

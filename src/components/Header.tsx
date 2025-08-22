@@ -74,7 +74,7 @@ export function Header() {
     }
   }, [])
   return (
-    <header className="fixed top-0 inset-x-0 z-50">
+    <header className="fixed top-0 inset-x-0 z-[9999]">
       {/* Row 1: full-width dark bar */}
       <div className="bg-[#33425F] text-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 h-14 flex items-center relative">

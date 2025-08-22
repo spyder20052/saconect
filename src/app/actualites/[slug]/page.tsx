@@ -27,18 +27,36 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
   return (
     <main>
-      <PageHero title={post.title} subtitle={`${formatDate(post.date)} • ${post.category}`} image={post.img} />
+      <PageHero title={post.title} subtitle={`${formatDate(post.date)} • ${post.category}`} image={post.img} backHref="/actualites" backLabel="Retour aux actualités" />
       <section className="relative">
         <Container className="py-12">
+          {/* Optional video */}
+          {(post.videoEmbedUrl || post.videoMp4Url) && (
+            <div className="mb-8 rounded-xl overflow-hidden border border-slate-200 bg-black/5">
+              {post.videoEmbedUrl ? (
+                <div className="aspect-video w-full">
+                  <iframe
+                    src={post.videoEmbedUrl}
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              ) : post.videoMp4Url ? (
+                <video className="w-full h-auto" controls>
+                  <source src={post.videoMp4Url} type="video/mp4" />
+                </video>
+              ) : null}
+            </div>
+          )}
+
           <article className="prose prose-slate max-w-none">
             {post.content.map((para, i) => (
               <p key={i}>{para}</p>
             ))}
           </article>
 
-          <div className="mt-10">
-            <Link href="/actualites" className="text-saco-blue hover:underline">← Retour aux actualités</Link>
-          </div>
+          
 
           {related.length > 0 && (
             <div className="mt-12">

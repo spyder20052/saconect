@@ -1,6 +1,7 @@
 import PageHero from '@/components/PageHero'
 import dynamic from 'next/dynamic'
 import Container from '@/components/Container'
+import { Globe2, ExternalLink, MapPin, ChevronRight, Flag } from 'lucide-react'
 
 export const metadata = { title: 'Couverture | SACONECT', description: 'Carte de couverture et disponibilité.' }
 
@@ -25,6 +26,34 @@ export default function CouverturePage() {
             <div className="rounded-xl border bg-white p-4">
               <div className="text-xs uppercase tracking-wide text-slate-500">Disponibilité moyenne</div>
               <div className="mt-1 text-2xl font-semibold text-slate-900">&gt; 95%</div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Intro Sigfox */}
+      <section className="mt-6">
+        <Container>
+          <div className="rounded-xl border bg-white p-5 flex items-start gap-4">
+            <div className="shrink-0 h-10 w-10 rounded-lg bg-saco-blue/10 text-saco-blue grid place-items-center">
+              <Globe2 className="h-5 w-5" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-slate-900">Profitez du plus grand réseau IoT au monde</h3>
+              <p className="text-slate-700 mt-1 text-sm">
+                Sigfox offre une connectivité spécifique à l’IoT (Internet of Things) pour les objets connectés. Leader dans son domaine,
+                Sigfox a construit un réseau mondial afin de connecter des milliards d’appareils à Internet tout en consommant le moins
+                d’énergie possible. Aujourd’hui, Sigfox couvre plus de 72 pays autour du monde.
+              </p>
+              <a
+                href="https://www.sigfox.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-saco-blue mt-3 text-sm hover:underline"
+              >
+                En savoir plus sur le réseau 0G de Sigfox
+                <ExternalLink className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </Container>
@@ -56,6 +85,59 @@ export default function CouverturePage() {
                 <span className="text-slate-500 text-xs">Données à titre indicatif. Vérification requise pour des déploiements critiques.</span>
               </div>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Localités couvertes */}
+      <section className="py-6">
+        <Container>
+          <h3 className="text-base font-semibold text-slate-900 inline-flex items-center gap-2">
+            <MapPin className="h-4 w-4 text-saco-blue" />
+            Liste des localités couvertes
+          </h3>
+          <div className="grid md:grid-cols-2 gap-4 mt-3">
+            {/* Côte d'Ivoire */}
+            <div className="rounded-xl border bg-white p-4">
+              <div className="flex items-center gap-2 text-slate-800 font-medium">
+                <Flag className="h-4 w-4 text-saco-blue" /> CÔTE D’IVOIRE
+              </div>
+              <ul className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-slate-700">
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> ABIDJAN</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> YAMOUSSOUKRO</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> BOUAKE</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> SANPEDRO</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> DALOA</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> ABENGOUROU</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> KORHOGO</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> ITY</li>
+              </ul>
+            </div>
+            {/* Sénégal */}
+            <div className="rounded-xl border bg-white p-4">
+              <div className="flex items-center gap-2 text-slate-800 font-medium">
+                <Flag className="h-4 w-4 text-saco-blue" /> SÉNÉGAL
+              </div>
+              <ul className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-slate-700">
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> DAKAR</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> THIES</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> MBOUR</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> TOUBA</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> DIAMNIADIO</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> MBORO</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> DIASS</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> NGUEKOKH</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> BAYAKH</li>
+                <li className="inline-flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-saco-blue" /> POPENGUINE</li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-3">
+            <p className="text-sm text-slate-700">Votre région n'est pas encore couverte ?</p>
+            <a href="/contact" className="mt-2 inline-flex items-center gap-2 h-10 px-4 rounded bg-saco-blue text-white text-sm">
+              Faire une demande de couverture
+              <ChevronRight className="h-4 w-4" />
+            </a>
           </div>
         </Container>
       </section>

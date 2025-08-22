@@ -2,6 +2,7 @@ import PageHero from '@/components/PageHero'
 import Container from '@/components/Container'
 import { POSTS, type Post } from './data'
 import Link from 'next/link'
+import { fetchSigfoxFeed } from './sigfox'
 
 export const metadata = { title: 'Actualités | SACONECT', description: 'Dernières nouvelles et annonces.' }
 
@@ -9,7 +10,7 @@ function formatDate(d: string) {
   return new Date(d).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: '2-digit' })
 }
 
-export default function ActualitesPage({ searchParams }: { searchParams: { q?: string; cat?: string } }) {
+export default async function ActualitesPage({ searchParams }: { searchParams: { q?: string; cat?: string } }) {
   const q = (searchParams.q || '').toLowerCase().trim()
   const cat = (searchParams.cat || '').trim()
 
@@ -23,9 +24,34 @@ export default function ActualitesPage({ searchParams }: { searchParams: { q?: s
     return matchQ && matchCat
   })
 
+  const sigfox = await fetchSigfoxFeed(6)
+
   return (
     <main>
       <PageHero title="Actualités" subtitle="Nos annonces, cas clients et innovations." />
+
+      {/* Sigfox feed (auto) */}
+      <section className="relative bg-slate-50/60">
+        <Container className="py-10">
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <h2 className="text-xl font-semibold text-slate-900">Fil d’actualités Sigfox</h2>
+            <a href="https://www.sigfox.com" target="_blank" rel="noreferrer" className="text-saco-blue hover:underline text-sm">Voir plus →</a>
+          </div>
+          {sigfox.length === 0 ? (
+            <p className="mt-2 text-slate-600 text-sm">Flux indisponible pour le moment.</p>
+          ) : (
+            <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {sigfox.map((item) => (
+                <a key={item.link} href={item.link} target="_blank" rel="noreferrer" className="rounded-xl border border-slate-200 bg-white p-4 hover:shadow transition">
+                  <div className="text-xs text-slate-500">{item.pubDate ? new Date(item.pubDate).toLocaleDateString('fr-FR') : '—'}</div>
+                  <div className="text-sm font-medium mt-1 text-slate-900 line-clamp-2">{item.title}</div>
+                  <div className="mt-2 text-saco-blue text-sm">Lire sur sigfox.com</div>
+                </a>
+              ))}
+            </div>
+          )}
+        </Container>
+      </section>
 
       {/* Controls */}
       <section className="relative">
