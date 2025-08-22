@@ -1,10 +1,11 @@
 import PageHero from '@/components/PageHero'
-import CoverageMap from '@/components/CoverageMap'
+import dynamic from 'next/dynamic'
 import Container from '@/components/Container'
 
 export const metadata = { title: 'Couverture | SACONECT', description: 'Carte de couverture et disponibilité.' }
 
 export default function CouverturePage() {
+  const CoverageMap = dynamic(() => import('@/components/CoverageMap'), { ssr: false })
   return (
     <main>
       <PageHero title="Couverture" subtitle="Visualisez la disponibilité par région." />

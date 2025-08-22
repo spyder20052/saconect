@@ -1,5 +1,5 @@
 'use client'
-import { useForm } from 'react-hook-form'
+import * as RHF from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -11,9 +11,11 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>
 
 export function NewsletterForm() {
-  const { register, handleSubmit, formState: { errors, isSubmitting, isSubmitSuccessful } } = useForm<FormData>({
+  const form: any = (RHF as any).useForm({
     resolver: zodResolver(schema)
   })
+  const { register, handleSubmit, formState } = form as any
+  const { errors, isSubmitting, isSubmitSuccessful } = formState as any
 
   const onSubmit = async (data: FormData) => {
     // TODO: intégrer provider (Mailchimp/Brevo) via API route
