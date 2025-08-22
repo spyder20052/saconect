@@ -1,5 +1,6 @@
 "use client"
 import Container from './Container'
+import { ChevronRight } from 'lucide-react'
 export default function PartnersSection() {
   const partners = [
     { name: 'Partner A', logo: 'https://placehold.co/180x60?text=Partner+A', href: '#' },
@@ -28,7 +29,9 @@ export default function PartnersSection() {
               </span>
               <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-slate-900">Ils contribuent à notre écosystème</h2>
             </div>
-            <a href="/partenaires" className="hidden sm:inline-flex h-10 px-4 rounded-md border border-slate-300/70 text-slate-700 text-sm items-center justify-center hover:border-slate-400 hover:bg-white transition">Tous les partenaires</a>
+            <a href="/partenaires" className="hidden sm:inline-flex h-10 px-4 rounded-md border border-slate-300/70 text-slate-700 text-sm items-center justify-center hover:border-slate-400 hover:bg-white transition">
+              Tous les partenaires <ChevronRight className="h-4 w-4 ml-2" />
+            </a>
           </div>
         </Container>
 

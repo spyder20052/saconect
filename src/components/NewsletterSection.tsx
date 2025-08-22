@@ -1,5 +1,6 @@
 import Container from './Container'
 import { NewsletterForm } from './NewsletterForm'
+import { CheckCircle2, ShieldCheck, Mail, MousePointerClick } from 'lucide-react'
 
 export default function NewsletterSection() {
   return (
@@ -27,22 +28,22 @@ export default function NewsletterSection() {
               Désinscription en un clic.
             </p>
             <ul className="mt-4 space-y-2 text-sm text-slate-700">
-              <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-saco-turquoise" />Conseils actionnables pour vos déploiements</li>
-              <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-saco-turquoise" />Veille réseau et couverture</li>
-              <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-saco-turquoise" />Zéro spam, zéro partage de données</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-saco-turquoise" />Conseils actionnables pour vos déploiements</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-saco-turquoise" />Veille réseau et couverture</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-saco-turquoise" />Zéro spam, zéro partage de données</li>
             </ul>
             {/* Trust badges */}
             <div className="mt-5 flex flex-wrap gap-2 text-xs text-slate-600">
               <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 backdrop-blur">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z"/></svg>
+                <ShieldCheck className="h-3.5 w-3.5 text-saco-blue" />
                 RGPD conforme
               </span>
               <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 backdrop-blur">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16v12H4zM4 6l8 6 8-6"/></svg>
+                <Mail className="h-3.5 w-3.5 text-saco-blue" />
                 1 email / semaine
               </span>
               <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 backdrop-blur">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6l12 12M6 18L18 6"/></svg>
+                <MousePointerClick className="h-3.5 w-3.5 text-saco-blue" />
                 Désinscription 1 clic
               </span>
             </div>

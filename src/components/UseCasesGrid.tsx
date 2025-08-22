@@ -1,5 +1,6 @@
 import Container from './Container'
 import Image from 'next/image'
+import { Sprout, Truck, Factory, Store, Home as HomeIcon, Building2, Landmark, Zap, ChevronRight } from 'lucide-react'
 const USE_CASES = [
   { href: '/solutions/smart-agriculture', title: 'Smart Agriculture', desc: 'Capteurs, irrigation intelligente, qualité des sols.', img: 'https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?q=80&w=1600&auto=format&fit=crop' },
   { href: '/solutions/smart-logistique', title: 'Smart Logistique', desc: 'Suivi de flotte, chaîne du froid, traçabilité.', img: 'https://images.unsplash.com/photo-1554631221-f9603e6808be?q=80&w=1600&auto=format&fit=crop' },
@@ -41,11 +42,24 @@ export default function UseCasesGrid() {
                 <div className="absolute inset-x-0 bottom-0 p-4">
                   <div className="flex items-center justify-between gap-3">
                     <div>
-                      <div className="text-white text-sm md:text-base font-semibold drop-shadow-sm">{s.title}</div>
+                      <div className="text-white text-sm md:text-base font-semibold drop-shadow-sm inline-flex items-center gap-2">
+                        {(() => {
+                          if (s.href.includes('smart-agriculture')) return <Sprout className="h-4 w-4 text-saco-turquoise" />
+                          if (s.href.includes('smart-logistique')) return <Truck className="h-4 w-4 text-saco-turquoise" />
+                          if (s.href.includes('smart-industrie')) return <Factory className="h-4 w-4 text-saco-turquoise" />
+                          if (s.href.includes('smart-commerce')) return <Store className="h-4 w-4 text-saco-turquoise" />
+                          if (s.href.includes('smart-home')) return <HomeIcon className="h-4 w-4 text-saco-turquoise" />
+                          if (s.href.includes('smart-building')) return <Building2 className="h-4 w-4 text-saco-turquoise" />
+                          if (s.href.includes('smart-city')) return <Landmark className="h-4 w-4 text-saco-turquoise" />
+                          if (s.href.includes('smart-energies')) return <Zap className="h-4 w-4 text-saco-turquoise" />
+                          return null
+                        })()}
+                        {s.title}
+                      </div>
                       <p className="text-white/85 text-xs md:text-xs mt-0.5 line-clamp-2">{s.desc}</p>
                     </div>
                     <span aria-hidden className="shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-saco-blue border border-white/50 opacity-90 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:shadow-md transition">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 5l7 7-7 7M5 12h14"/></svg>
+                      <ChevronRight className="h-4 w-4" />
                     </span>
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import Container from './Container'
+import { CheckCircle2, ChevronRight } from 'lucide-react'
 
 export default function AboutSection() {
   return (
@@ -33,9 +34,7 @@ export default function AboutSection() {
                 'Intégration simple et sécurisée',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2 text-slate-700">
-                  <svg className="mt-0.5 h-4 w-4 text-saco-turquoise shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.25 7.25a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414l2.293 2.293 6.543-6.543a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-saco-turquoise shrink-0" aria-hidden />
                   {item}
                 </li>
               ))}
@@ -44,10 +43,10 @@ export default function AboutSection() {
             {/* CTAs */}
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href="/entreprise" className="inline-flex h-11 px-5 rounded-md bg-saco-blue text-white items-center justify-center shadow-sm shadow-saco-blue/30 hover:translate-y-[-1px] hover:shadow-md hover:shadow-saco-blue/30 transition">
-                En savoir plus
+                En savoir plus <ChevronRight className="h-4 w-4 ml-2" />
               </Link>
               <Link href="/contact" className="inline-flex h-11 px-5 rounded-md border border-saco-blue/50 text-saco-blue items-center justify-center hover:border-saco-blue hover:bg-saco-blue/5 transition">
-                Nous contacter
+                Nous contacter <ChevronRight className="h-4 w-4 ml-2" />
               </Link>
             </div>
 

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Container from './Container'
 import { SocialLinks } from './SocialLinks'
 import { useEffect, useRef } from 'react'
+import { ChevronRight, Mail, Phone } from 'lucide-react'
 
 export function Footer() {
   const footerRef = useRef<HTMLElement | null>(null)
@@ -54,11 +55,36 @@ export function Footer() {
           <div className="md:col-span-2 reveal-up" style={{ transitionDelay: '120ms' }}>
             <div className="text-slate-200 font-medium mb-3">Sitemap</div>
             <ul className="space-y-2">
-              <li><Link className="hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition" href="/entreprise">Entreprise</Link></li>
-              <li><Link className="hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition" href="/solutions">Solutions</Link></li>
-              <li><Link className="hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition" href="/partenaires">Partenaires</Link></li>
-              <li><Link className="hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition" href="/actualites">Actualités</Link></li>
-              <li><Link className="hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition" href="/ressources">Ressources</Link></li>
+              <li>
+                <Link className="group inline-flex items-center gap-2 hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition" href="/entreprise">
+                  <ChevronRight className="h-4 w-4 text-saco-turquoise/80" />
+                  Entreprise
+                </Link>
+              </li>
+              <li>
+                <Link className="group inline-flex items-center gap-2 hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition" href="/solutions">
+                  <ChevronRight className="h-4 w-4 text-saco-turquoise/80" />
+                  Solutions
+                </Link>
+              </li>
+              <li>
+                <Link className="group inline-flex items-center gap-2 hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition" href="/partenaires">
+                  <ChevronRight className="h-4 w-4 text-saco-turquoise/80" />
+                  Partenaires
+                </Link>
+              </li>
+              <li>
+                <Link className="group inline-flex items-center gap-2 hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition" href="/actualites">
+                  <ChevronRight className="h-4 w-4 text-saco-turquoise/80" />
+                  Actualités
+                </Link>
+              </li>
+              <li>
+                <Link className="group inline-flex items-center gap-2 hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition" href="/ressources">
+                  <ChevronRight className="h-4 w-4 text-saco-turquoise/80" />
+                  Ressources
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -66,18 +92,38 @@ export function Footer() {
           <div className="md:col-span-3 reveal-up" style={{ transitionDelay: '180ms' }}>
             <div className="text-slate-200 font-medium mb-3">Légal</div>
             <ul className="space-y-2">
-              <li><Link className="hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition" href="/legal/mentions-legales">Mentions légales</Link></li>
-              <li><Link className="hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition" href="/legal/politique-confidentialite">Politique de confidentialité</Link></li>
-              <li><Link className="hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition" href="/legal/cookies">Cookies</Link></li>
-              <li><Link className="hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition" href="/credits">Crédits</Link></li>
+              <li>
+                <Link className="group inline-flex items-center gap-2 hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition" href="/legal/mentions-legales">
+                  <ChevronRight className="h-4 w-4 text-saco-turquoise/80" />
+                  Mentions légales
+                </Link>
+              </li>
+              <li>
+                <Link className="group inline-flex items-center gap-2 hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition" href="/legal/politique-confidentialite">
+                  <ChevronRight className="h-4 w-4 text-saco-turquoise/80" />
+                  Politique de confidentialité
+                </Link>
+              </li>
+              <li>
+                <Link className="group inline-flex items-center gap-2 hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition" href="/legal/cookies">
+                  <ChevronRight className="h-4 w-4 text-saco-turquoise/80" />
+                  Cookies
+                </Link>
+              </li>
+              <li>
+                <Link className="group inline-flex items-center gap-2 hover:text-white transition relative after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-full after:bg-gradient-to-r after:from-saco-turquoise after:to-saco-blue after:scale-x-0 group-hover:after:scale-x-100 after:origin-left after:transition" href="/credits">
+                  <ChevronRight className="h-4 w-4 text-saco-turquoise/80" />
+                  Crédits
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact */}
           <div className="md:col-span-3 reveal-up" style={{ transitionDelay: '240ms' }}>
             <div className="text-slate-200 font-medium mb-3">Contact</div>
-            <p className="text-slate-400">contact@saconect.com</p>
-            <p className="text-slate-400 mt-1">+212 6 00 00 00 00</p>
+            <p className="text-slate-400 inline-flex items-center gap-2"><Mail className="h-4 w-4 text-saco-turquoise/80" /> contact@saconect.com</p>
+            <p className="text-slate-400 mt-1 inline-flex items-center gap-2"><Phone className="h-4 w-4 text-saco-turquoise/80" /> +212 6 00 00 00 00</p>
           </div>
         </div>
       </Container>

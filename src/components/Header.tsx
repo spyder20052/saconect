@@ -2,6 +2,11 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import {
+  Mail, Phone, ChevronDown, ChevronRight,
+  Sprout, Truck, Factory, Store, Home as HomeIcon, Building2, Landmark, Zap,
+  Server, Wrench, Code
+} from 'lucide-react'
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -76,11 +81,11 @@ export function Header() {
           {/* Left: contact */}
           <div className="hidden sm:flex items-center gap-6 text-xs opacity-90">
             <a href="mailto:contact@saconect.com" className="hover:opacity-100 inline-flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 13 2 6.76V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6.76L12 13z"/><path d="M22 6H2l10 6 10-6z"/></svg>
+              <Mail className="h-4 w-4" />
               contact@saconect.com
             </a>
             <span className="inline-flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.27.2 2.47.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/></svg>
+              <Phone className="h-4 w-4" />
               +225 00 00 00 00
             </span>
           </div>
@@ -170,7 +175,7 @@ export function Header() {
                 aria-expanded={solutionsOpen}
               >
                 <span>Solutions</span>
-                <svg className={`w-3 h-3 transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="currentColor"><path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 0 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06z"/></svg>
+                <ChevronDown className={`w-3 h-3 transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} />
               </Link>
               {/* Dropdown */}
               <div
@@ -184,8 +189,23 @@ export function Header() {
                       href={`/solutions/${s.slug}`}
                       className="flex items-center justify-between px-3 py-2 rounded-md hover:bg-slate-50"
                     >
-                      <span className="text-[11px] font-medium tracking-wide uppercase text-slate-700">{s.title}</span>
-                      <span className="text-saco-blue">→</span>
+                      <span className="text-[11px] font-medium tracking-wide uppercase text-slate-700 inline-flex items-center gap-2">
+                        {(() => {
+                          switch (s.slug) {
+                            case 'smart-agriculture': return <Sprout className="h-4 w-4 text-saco-blue" />
+                            case 'smart-logistique': return <Truck className="h-4 w-4 text-saco-blue" />
+                            case 'smart-industrie': return <Factory className="h-4 w-4 text-saco-blue" />
+                            case 'smart-commerce': return <Store className="h-4 w-4 text-saco-blue" />
+                            case 'smart-home': return <HomeIcon className="h-4 w-4 text-saco-blue" />
+                            case 'smart-building': return <Building2 className="h-4 w-4 text-saco-blue" />
+                            case 'smart-city': return <Landmark className="h-4 w-4 text-saco-blue" />
+                            case 'smart-energies': return <Zap className="h-4 w-4 text-saco-blue" />
+                            default: return null
+                          }
+                        })()}
+                        {s.title}
+                      </span>
+                      <ChevronRight className="h-4 w-4 text-saco-blue" />
                     </Link>
                   ))}
                 </div>
@@ -209,7 +229,7 @@ export function Header() {
                 aria-expanded={ecoOpen}
               >
                 <span>Écosystème IoT</span>
-                <svg className={`w-3 h-3 transition-transform ${ecoOpen ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="currentColor"><path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 0 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06z"/></svg>
+                <ChevronDown className={`w-3 h-3 transition-transform ${ecoOpen ? 'rotate-180' : ''}`} />
               </Link>
               <div
                 className={`${ecoOpen ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-150 absolute left-0 mt-2 w-[360px] bg-white text-slate-800 rounded-lg shadow-lg ring-1 ring-black/5 p-3`}
@@ -222,8 +242,17 @@ export function Header() {
                       href={e.href}
                       className="flex items-center justify-between px-3 py-2 rounded-md hover:bg-slate-50"
                     >
-                      <span className="text-[11px] font-medium tracking-wide uppercase text-slate-700">{e.title}</span>
-                      <span className="text-saco-blue">→</span>
+                      <span className="text-[11px] font-medium tracking-wide uppercase text-slate-700 inline-flex items-center gap-2">
+                        {(() => {
+                          if (e.href.includes('fabricants')) return <Factory className="h-4 w-4 text-saco-blue" />
+                          if (e.href.includes('plateformes')) return <Server className="h-4 w-4 text-saco-blue" />
+                          if (e.href.includes('integrateurs')) return <Wrench className="h-4 w-4 text-saco-blue" />
+                          if (e.href.includes('developpeurs')) return <Code className="h-4 w-4 text-saco-blue" />
+                          return null
+                        })()}
+                        {e.title}
+                      </span>
+                      <ChevronRight className="h-4 w-4 text-saco-blue" />
                     </Link>
                   ))}
                 </div>

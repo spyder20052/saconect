@@ -1,11 +1,12 @@
 import Container from './Container'
+import { Battery, Banknote, Wifi, Users } from 'lucide-react'
 
 export default function WhySigfox() {
   const items = [
-    { title: 'Longue durée de vie', desc: 'Batteries des capteurs optimisées pour plusieurs années.', icon: '🔋' },
-    { title: 'Coûts réduits', desc: 'Matériel abordable et frais de connectivité bas.', icon: '💸' },
-    { title: 'Longue portée', desc: 'Réseau à grande capacité et couverture étendue.', icon: '📶' },
-    { title: 'Écosystème riche', desc: 'Le plus grand réseau de partenaires IoT.', icon: '🤝' },
+    { title: 'Longue durée de vie', desc: 'Batteries des capteurs optimisées pour plusieurs années.', Icon: Battery },
+    { title: 'Coûts réduits', desc: 'Matériel abordable et frais de connectivité bas.', Icon: Banknote },
+    { title: 'Longue portée', desc: 'Réseau à grande capacité et couverture étendue.', Icon: Wifi },
+    { title: 'Écosystème riche', desc: 'Le plus grand réseau de partenaires IoT.', Icon: Users },
   ]
   return (
     <section className="relative overflow-hidden">
@@ -34,7 +35,7 @@ export default function WhySigfox() {
               <div key={it.title} className="group rounded-2xl p-[1px] bg-gradient-to-br from-white/15 via-white/5 to-transparent">
                 <div className="rounded-2xl h-full bg-white/5 backdrop-blur p-5 transition duration-300 group-hover:bg-white/10 group-hover:translate-y-[-2px]">
                   <div className="h-11 w-11 grid place-items-center rounded-xl bg-white/10 text-xl ring-1 ring-white/10">
-                    {it.icon}
+                    <it.Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-4 font-medium">{it.title}</h3>
                   <p className="text-sm text-white/80 mt-1">{it.desc}</p>

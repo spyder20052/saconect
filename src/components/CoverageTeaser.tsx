@@ -1,5 +1,6 @@
 import Container from './Container'
 import Image from 'next/image'
+import { MapPinned, ChevronRight } from 'lucide-react'
 
 export default function CoverageTeaser() {
   return (
@@ -37,12 +38,15 @@ export default function CoverageTeaser() {
                 />
                 <div className="absolute inset-x-0 bottom-0 flex items-center justify-between p-3 text-xs text-slate-700 bg-gradient-to-t from-white/80 via-white/60 to-transparent">
                   <div className="inline-flex items-center gap-2">
-                    <span className="inline-flex h-6 px-2 items-center rounded bg-saco-blue/10 text-saco-blue">CI • SN • GH</span>
+                    <span className="inline-flex h-6 px-2 items-center rounded bg-saco-blue/10 text-saco-blue gap-1">
+                      <MapPinned className="h-3.5 w-3.5" />
+                      CI • SN • GH
+                    </span>
                     <span>Couverture en expansion</span>
                   </div>
                   <a href="/couverture" className="inline-flex items-center gap-1 text-saco-blue hover:underline">
                     Ouvrir la carte
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13 5l7 7-7 7M5 12h14"/></svg>
+                    <ChevronRight className="h-3.5 w-3.5" />
                   </a>
                 </div>
               </div>

@@ -1,3 +1,5 @@
+import { Sprout, Truck, Factory, Store, Home as HomeIcon, Building2, Landmark, Zap, ChevronRight } from 'lucide-react'
+
 const SOLUTIONS = [
   { slug: 'smart-agriculture', title: 'Smart Agriculture', desc: 'Capteurs, irrigation, qualité des sols.' },
   { slug: 'smart-logistique', title: 'Smart Logistique', desc: 'Suivi de flotte, actifs, chaîne logistique.' },
@@ -20,8 +22,23 @@ export function SolutionsGrid() {
             className="group block rounded-xl border border-slate-200 bg-white p-5 hover:shadow-sm transition-shadow"
           >
             <div className="flex items-center justify-between">
-              <div className="font-medium text-slate-900 group-hover:text-saco-blue">{s.title}</div>
-              <span className="text-saco-blue text-sm">→</span>
+              <div className="font-medium text-slate-900 group-hover:text-saco-blue inline-flex items-center gap-2">
+                {(() => {
+                  switch (s.slug) {
+                    case 'smart-agriculture': return <Sprout className="h-4 w-4 text-saco-blue" />
+                    case 'smart-logistique': return <Truck className="h-4 w-4 text-saco-blue" />
+                    case 'smart-industrie': return <Factory className="h-4 w-4 text-saco-blue" />
+                    case 'smart-commerce': return <Store className="h-4 w-4 text-saco-blue" />
+                    case 'smart-home': return <HomeIcon className="h-4 w-4 text-saco-blue" />
+                    case 'smart-building': return <Building2 className="h-4 w-4 text-saco-blue" />
+                    case 'smart-city': return <Landmark className="h-4 w-4 text-saco-blue" />
+                    case 'smart-energies': return <Zap className="h-4 w-4 text-saco-blue" />
+                    default: return null
+                  }
+                })()}
+                {s.title}
+              </div>
+              <ChevronRight className="text-saco-blue h-4 w-4" />
             </div>
             <div className="text-slate-600 text-sm mt-1">{s.desc}</div>
           </a>
