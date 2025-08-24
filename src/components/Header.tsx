@@ -190,17 +190,29 @@ export function Header() {
               onFocusCapture={openSolutions}
               onBlur={closeSolutionsWithDelay}
             >
-              <Link
-                href="/solutions"
-                className="hover:opacity-100 opacity-90 inline-flex items-center gap-1"
-                aria-haspopup="menu"
-                aria-expanded={solutionsOpen}
-              >
-                <span>Solutions</span>
-                <ChevronDown className={`w-3 h-3 transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} />
-              </Link>
+              <div className="hover:opacity-100 opacity-90 inline-flex items-center gap-1">
+                <Link
+                  href="/solutions"
+                  className="inline-flex items-center"
+                  aria-haspopup="menu"
+                  aria-expanded={solutionsOpen}
+                >
+                  <span>Solutions</span>
+                </Link>
+                <button
+                  type="button"
+                  aria-label="Ouvrir le menu Solutions"
+                  aria-expanded={solutionsOpen}
+                  aria-controls="solutions-menu"
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); setSolutionsOpen(v => !v) }}
+                  className="inline-flex items-center justify-center"
+                >
+                  <ChevronDown className={`w-3 h-3 transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} />
+                </button>
+              </div>
               {/* Dropdown */}
               <div
+                id="solutions-menu"
                 className={`${solutionsOpen ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-150 absolute left-0 mt-2 w-[560px] bg-white text-slate-800 rounded-lg shadow-lg ring-1 ring-black/5 p-3 z-[10000]`}
                 role="menu"
               >
@@ -244,16 +256,28 @@ export function Header() {
               onFocusCapture={openEco}
               onBlur={closeEcoWithDelay}
             >
-              <Link
-                href="/ecosysteme-iot"
-                className="hover:opacity-100 opacity-90 inline-flex items-center gap-1"
-                aria-haspopup="menu"
-                aria-expanded={ecoOpen}
-              >
-                <span>Écosystème IoT</span>
-                <ChevronDown className={`w-3 h-3 transition-transform ${ecoOpen ? 'rotate-180' : ''}`} />
-              </Link>
+              <div className="hover:opacity-100 opacity-90 inline-flex items-center gap-1">
+                <Link
+                  href="/ecosysteme-iot"
+                  className="inline-flex items-center"
+                  aria-haspopup="menu"
+                  aria-expanded={ecoOpen}
+                >
+                  <span>Écosystème IoT</span>
+                </Link>
+                <button
+                  type="button"
+                  aria-label="Ouvrir le menu Écosystème IoT"
+                  aria-expanded={ecoOpen}
+                  aria-controls="ecosysteme-menu"
+                  onClick={(e) => { e.preventDefault(); e.stopPropagation(); setEcoOpen(v => !v) }}
+                  className="inline-flex items-center justify-center"
+                >
+                  <ChevronDown className={`w-3 h-3 transition-transform ${ecoOpen ? 'rotate-180' : ''}`} />
+                </button>
+              </div>
               <div
+                id="ecosysteme-menu"
                 className={`${ecoOpen ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-150 absolute left-0 mt-2 w-[360px] bg-white text-slate-800 rounded-lg shadow-lg ring-1 ring-black/5 p-3 z-[10000]`}
                 role="menu"
               >
