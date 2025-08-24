@@ -1,11 +1,12 @@
 "use client"
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import {
   Mail, Phone, ChevronDown, ChevronRight,
   Sprout, Truck, Factory, Store, Home as HomeIcon, Building2, Landmark, Zap,
-  Server, Wrench, Code
+  Server, Wrench, Code, Search as SearchIcon
 } from 'lucide-react'
 
 export function Header() {
@@ -14,12 +15,13 @@ export function Header() {
   const [lang, setLang] = useState<'FR'|'EN'>('FR')
   const [langOpen, setLangOpen] = useState(false)
   const langRef = useRef<HTMLDivElement | null>(null)
+  const router = useRouter()
   // Desktop dropdown content for "Solutions"
   const SOLUTIONS = [
     { slug: 'smart-agriculture', title: 'Smart Agriculture' },
     { slug: 'smart-logistique', title: 'Smart Logistique' },
     { slug: 'smart-industrie', title: 'Smart Industrie' },
-    { slug: 'smart-commerce', title: 'Smart Commerce' },
+    { slug: 'smart-retail', title: 'Smart Retail' },
     { slug: 'smart-home', title: 'Smart Home' },
     { slug: 'smart-building', title: 'Smart Building' },
     { slug: 'smart-city', title: 'Smart City' },
@@ -75,6 +77,8 @@ export function Header() {
   }, [])
   return (
     <header className="fixed top-0 inset-x-0 z-[9999]">
+      {/* Skip to content */}
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2 focus:z-[10000] bg-white text-slate-900 rounded px-3 py-2 text-sm shadow">Aller au contenu</a>
       {/* Row 1: full-width dark bar */}
       <div className="bg-[#33425F] text-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 h-14 flex items-center relative">
@@ -84,16 +88,16 @@ export function Header() {
               <Mail className="h-4 w-4" />
               contact@saconect.com
             </a>
-            <span className="inline-flex items-center gap-2">
+            <a href="tel:+22500000000" className="inline-flex items-center gap-2 hover:opacity-100">
               <Phone className="h-4 w-4" />
               +225 00 00 00 00
-            </span>
+            </a>
           </div>
 
           {/* Center: logo */}
-          <div className="absolute inset-x-0 flex justify-center">
-            <Link href="/" aria-label="Accueil" className="inline-flex">
-              <img src="/logo-white.svg" alt="SACONECT" className="h-6 w-auto" />
+          <div className="absolute inset-x-0 flex justify-center pointer-events-none">
+            <Link href="/" aria-label="Accueil" className="inline-flex pointer-events-auto">
+              <Image src="/logo-white.svg" alt="SACONECT" width={120} height={24} priority />
             </Link>
           </div>
 
@@ -145,11 +149,29 @@ export function Header() {
                 </div>
               )}
             </div>
-            <div className="hidden lg:flex items-center h-8 rounded bg-white/10 border border-white/30 overflow-hidden">
-              <input value={q} onChange={(e)=> setQ(e.target.value)} placeholder="Rechercher..." className="h-full w-48 bg-transparent px-3 text-xs outline-none placeholder:text-white/70 text-white" />
-              <button className="h-8 px-3 bg-white/10 text-white text-xs">OK</button>
-            </div>
-            <button aria-label="Menu" className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded border border-white/30" onClick={() => setOpen(v => !v)}>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault()
+                const query = q.trim()
+                if (query.length === 0) return
+                router.push(`/search?q=${encodeURIComponent(query)}`)
+              }}
+              action="/search"
+              method="get"
+              className="hidden lg:flex items-center h-8 rounded bg-white/10 border border-white/30 overflow-hidden"
+            >
+              <input
+                value={q}
+                onChange={(e)=> setQ(e.target.value)}
+                name="q"
+                placeholder="Rechercher..."
+                className="h-full w-48 bg-transparent px-3 text-xs outline-none placeholder:text-white/70 text-white"
+              />
+              <button type="submit" aria-label="Rechercher" className="h-8 px-3 bg-white/10 text-white text-xs grid place-items-center">
+                <SearchIcon className="h-3.5 w-3.5" />
+              </button>
+            </form>
+            <button aria-label="Menu" aria-expanded={open} aria-controls="mobile-nav" className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded border border-white/30" onClick={() => setOpen(v => !v)}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
             </button>
           </div>
@@ -179,7 +201,7 @@ export function Header() {
               </Link>
               {/* Dropdown */}
               <div
-                className={`${solutionsOpen ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-150 absolute left-0 mt-2 w-[560px] bg-white text-slate-800 rounded-lg shadow-lg ring-1 ring-black/5 p-3`}
+                className={`${solutionsOpen ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-150 absolute left-0 mt-2 w-[560px] bg-white text-slate-800 rounded-lg shadow-lg ring-1 ring-black/5 p-3 z-[10000]`}
                 role="menu"
               >
                 <div className="grid grid-cols-2 gap-1">
@@ -195,7 +217,7 @@ export function Header() {
                             case 'smart-agriculture': return <Sprout className="h-4 w-4 text-saco-blue" />
                             case 'smart-logistique': return <Truck className="h-4 w-4 text-saco-blue" />
                             case 'smart-industrie': return <Factory className="h-4 w-4 text-saco-blue" />
-                            case 'smart-commerce': return <Store className="h-4 w-4 text-saco-blue" />
+                            case 'smart-retail': return <Store className="h-4 w-4 text-saco-blue" />
                             case 'smart-home': return <HomeIcon className="h-4 w-4 text-saco-blue" />
                             case 'smart-building': return <Building2 className="h-4 w-4 text-saco-blue" />
                             case 'smart-city': return <Landmark className="h-4 w-4 text-saco-blue" />
@@ -232,7 +254,7 @@ export function Header() {
                 <ChevronDown className={`w-3 h-3 transition-transform ${ecoOpen ? 'rotate-180' : ''}`} />
               </Link>
               <div
-                className={`${ecoOpen ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-150 absolute left-0 mt-2 w-[360px] bg-white text-slate-800 rounded-lg shadow-lg ring-1 ring-black/5 p-3`}
+                className={`${ecoOpen ? 'visible opacity-100' : 'invisible opacity-0'} transition-opacity duration-150 absolute left-0 mt-2 w-[360px] bg-white text-slate-800 rounded-lg shadow-lg ring-1 ring-black/5 p-3 z-[10000]`}
                 role="menu"
               >
                 <div className="grid grid-cols-1 gap-1">
@@ -267,14 +289,39 @@ export function Header() {
       {/* Mobile panel (centered content) */}
       <div className="max-w-7xl mx-auto px-4">
         {open && (
-          <div className="md:hidden pb-4">
-            <div className="flex items-center gap-2 mb-3">
-              <input value={q} onChange={(e)=> setQ(e.target.value)} placeholder="Rechercher..." className="flex-1 h-10 rounded-md border bg-white px-3 text-sm" />
+          <div id="mobile-nav" className="md:hidden pb-4">
+            <form
+              className="flex items-center gap-2 mb-3"
+              action="/search"
+              method="get"
+              onSubmit={(e) => {
+                // keep SPA navigation while still allowing normal GET submit
+                e.preventDefault()
+                const query = q.trim()
+                if (query.length === 0) return
+                router.push(`/search?q=${encodeURIComponent(query)}`)
+                setOpen(false)
+              }}
+            >
+              <input
+                value={q}
+                onChange={(e)=> setQ(e.target.value)}
+                placeholder="Rechercher..."
+                name="q"
+                className="flex-1 h-10 rounded-md border bg-white px-3 text-sm"
+              />
+              <button
+                type="submit"
+                aria-label="Rechercher"
+                className="h-10 px-3 rounded-md bg-saco-blue text-white text-sm grid place-items-center"
+              >
+                <SearchIcon className="h-4 w-4" />
+              </button>
               <select value={lang} onChange={(e)=> setLang(e.target.value as 'FR'|'EN')} className="h-10 rounded-md border bg-white px-2 text-sm">
                 <option value="FR">FR</option>
                 <option value="EN">EN</option>
               </select>
-            </div>
+            </form>
             <nav className="grid gap-2 text-slate-800 text-sm">
               <Link href="/" onClick={() => setOpen(false)} className="px-2 py-2 rounded hover:bg-slate-100">Accueil</Link>
               <Link href="/solutions" onClick={() => setOpen(false)} className="px-2 py-2 rounded hover:bg-slate-100">Solutions</Link>

@@ -1,3 +1,5 @@
+import { ChevronRight } from 'lucide-react'
+
 export function Presentation() {
   return (
     <section className="bg-slate-100">
@@ -8,8 +10,8 @@ export function Presentation() {
           <div className="h-2 bg-slate-300/80 rounded max-w-2xl mx-auto" />
           <div className="h-2 bg-slate-300/80 rounded max-w-xl mx-auto" />
         </div>
-        <a href="/entreprise" className="inline-block mt-8 px-4 py-2 rounded border border-slate-400 text-slate-700 text-sm">
-          En savoir plus
+        <a href="/entreprise" className="inline-flex mt-8 h-11 px-5 rounded-md bg-saco-blue text-white items-center justify-center shadow-sm shadow-saco-blue/30 hover:translate-y-[-1px] hover:shadow-md hover:shadow-saco-blue/30 transition">
+          En savoir plus <ChevronRight className="h-4 w-4 ml-2" />
         </a>
       </div>
     </section>

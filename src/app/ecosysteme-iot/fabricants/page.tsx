@@ -1,6 +1,7 @@
 import PageHero from '@/components/PageHero'
 import Container from '@/components/Container'
-import { Thermometer, Droplets, Package, Activity, Wind, Zap, Eye, Droplet, Wrench, Rss, Radio, Network, CheckCircle } from 'lucide-react'
+import Image from 'next/image'
+import { Layers, Users, Sparkles, TrendingUp, ShieldCheck } from 'lucide-react'
 
 export const metadata = {
   title: 'Fabricants de capteurs | SACONECT',
@@ -9,69 +10,162 @@ export const metadata = {
 
 export default function FabricantsPage() {
   return (
-    <main>
+    <main id="main">
       <PageHero
         title="Fabricants de capteurs"
-        subtitle="Capteurs fiables, autonomes et certifiés pour tous les environnements. Nous vous aidons à sélectionner le bon matériel selon l’usage."
+        subtitle="Capteurs fiables, autonomes et certifiés. Nous vous aidons à sélectionner le bon matériel selon l’usage."
         image="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=2000&auto=format&fit=crop"
         backHref="/ecosysteme-iot"
         backLabel="Retour à l’Écosystème IoT"
       />
 
       <Container className="py-12 space-y-12">
+        {/* Le rôle du fabricant de capteurs */}
         <section>
-          <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
-            <span className="h-8 w-8 rounded-md bg-saco-blue/10 text-saco-blue grid place-items-center">
-              <Package className="h-4 w-4" />
-            </span>
-            Usages couverts
-          </h2>
-          <ul className="mt-3 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-slate-700">
-            <li className="border rounded-lg p-4 bg-white flex items-center gap-2"><Thermometer className="h-4 w-4 text-saco-blue" /><Droplets className="h-4 w-4 text-saco-blue/70" /> Température & humidité</li>
-            <li className="border rounded-lg p-4 bg-white flex items-center gap-2"><Package className="h-4 w-4 text-saco-blue" /><Activity className="h-4 w-4 text-saco-blue/70" /> Ouverture / choc • Suivi d’actifs</li>
-            <li className="border rounded-lg p-4 bg-white flex items-center gap-2"><Wind className="h-4 w-4 text-saco-blue" /> Qualité de l’air • CO₂, COV</li>
-            <li className="border rounded-lg p-4 bg-white flex items-center gap-2"><Zap className="h-4 w-4 text-saco-blue" /> Énergie • Comptage & sous-comptage</li>
-            <li className="border rounded-lg p-4 bg-white flex items-center gap-2"><Eye className="h-4 w-4 text-saco-blue" /> Présence • Occupation d’espaces</li>
-            <li className="border rounded-lg p-4 bg-white flex items-center gap-2"><Droplet className="h-4 w-4 text-saco-blue" /><Wrench className="h-4 w-4 text-saco-blue/70" /> Niveau & fuites • Maintenance</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
-            <span className="h-8 w-8 rounded-md bg-saco-blue/10 text-saco-blue grid place-items-center">
-              <Rss className="h-4 w-4" />
-            </span>
-            Protocoles & connectivité
-          </h2>
-          <div className="mt-3 grid md:grid-cols-3 gap-4 text-sm text-slate-700">
-            <div className="border rounded-lg p-5 bg-white">
-              <h3 className="text-sm font-semibold text-slate-900 inline-flex items-center gap-2"><Rss className="h-4 w-4 text-saco-blue" /> LPWAN</h3>
-              <p className="mt-1">LoRaWAN, Sigfox, NB‑IoT, LTE‑M pour les environnements étendus et basse conso.</p>
-            </div>
-            <div className="border rounded-lg p-5 bg-white">
-              <h3 className="text-sm font-semibold text-slate-900 inline-flex items-center gap-2"><Radio className="h-4 w-4 text-saco-blue" /> Courte portée</h3>
-              <p className="mt-1">BLE, Zigbee, Thread pour bâtiments intelligents et réseaux mesh.</p>
-            </div>
-            <div className="border rounded-lg p-5 bg-white">
-              <h3 className="text-sm font-semibold text-slate-900 inline-flex items-center gap-2"><Network className="h-4 w-4 text-saco-blue" /> IP & Filaire</h3>
-              <p className="mt-1">Wi‑Fi, Ethernet, Modbus/RS‑485 pour intégrations industrielles.</p>
+          <div className="relative overflow-hidden rounded-2xl border bg-white shadow-sm">
+            <div className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-saco-blue to-saco-turquoise" />
+            <div className="p-6 md:p-8">
+              <div className="grid md:grid-cols-5 gap-6 items-start">
+                <div className="md:col-span-3 flex items-start gap-4">
+                  <span className="h-10 w-10 rounded-lg bg-saco-blue/10 text-saco-blue grid place-items-center">
+                    <Layers className="h-5 w-5" />
+                  </span>
+                  <div className="space-y-2">
+                    <h2 className="text-xl font-semibold text-slate-900">Le rôle du fabricant de capteurs</h2>
+                    <ul className="text-slate-700 space-y-1.5 list-disc pl-5">
+                      <li>Transformer des phénomènes réels en données fiables et exploitables.</li>
+                      <li>Superviser et automatiser des processus simples ou complexes.</li>
+                      <li>Créer des gains mesurables: productivité, coûts, sérénité.</li>
+                    </ul>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      <span className="text-xs rounded-md bg-slate-50 border px-2.5 py-1 text-slate-700">Mesure fiable</span>
+                      <span className="text-xs rounded-md bg-slate-50 border px-2.5 py-1 text-slate-700">Surveillance continue</span>
+                      <span className="text-xs rounded-md bg-slate-50 border px-2.5 py-1 text-slate-700">Décision data‑driven</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:col-span-2">
+                  <div className="relative h-40 md:h-48 w-full overflow-hidden rounded-xl">
+                    <Image
+                      src="https://images.unsplash.com/photo-1555696958-c5049b866f6a?q=80&w=1600&auto=format&fit=crop"
+                      alt="Capteurs IoT et électronique"
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
+        {/* Ils font partie de notre écosystème IoT - Logo wall */}
         <section>
-          <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
-            <span className="h-8 w-8 rounded-md bg-saco-blue/10 text-saco-blue grid place-items-center">
-              <CheckCircle className="h-4 w-4" />
-            </span>
-            Critères de sélection
-          </h2>
-          <ul className="mt-3 text-slate-700 space-y-1">
-            <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-saco-blue" /> Autonomie énergétique et facilité de maintenance</li>
-            <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-saco-blue" /> Certifications et robustesse environnementale</li>
-            <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-saco-blue" /> Qualité des mesures et étendue des gammes</li>
-            <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-saco-blue" /> Interopérabilité et documentation</li>
-          </ul>
+          <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-r from-saco-blue/5 via-saco-turquoise/5 to-white p-6 md:p-8 shadow-sm">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900">Ils font partie de notre écosystème IoT</h3>
+                <p className="mt-1 text-slate-700">Une sélection de fabricants partenaires. Remplacez les placeholders par vos logos.</p>
+              </div>
+            </div>
+
+            {/* Grid of placeholder logos */}
+            <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {[
+                { name: 'Adeunis' },
+                { name: 'Owasys' },
+                { name: 'IoThink' },
+                { name: 'Enless' },
+                { name: 'Nke WATTECO' },
+                { name: 'Sensedge' },
+                { name: 'Invoxia' },
+                { name: 'TD Next' },
+                { name: 'Unabiz' },
+                { name: 'Elsys' },
+                { name: 'Kerlink' },
+                { name: 'McThings' }
+              ].map((p, i) => (
+                <a key={i} href="#" className="group">
+                  <div className="h-20 rounded-xl border bg-slate-50/60 hover:bg-white transition-colors grid place-items-center shadow-sm">
+                    <div className="px-3 text-slate-500 group-hover:text-slate-900 transition-colors font-medium text-sm tracking-wide">
+                      {p.name}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            {/* Featured partner links (inspired by archived page) */}
+            <div className="mt-6 grid md:grid-cols-3 gap-4 text-sm">
+              <a href="https://www.simplehw.eu" target="_blank" rel="noopener noreferrer" className="group rounded-xl border bg-white p-4 hover:shadow-sm transition">
+                <div className="text-slate-900 font-medium">simplehw.eu</div>
+                <div className="mt-1 text-slate-600 group-hover:text-slate-700">Capteurs simples, abordables et fiables</div>
+              </a>
+              <a href="https://connectedfinland.fi/en/" target="_blank" rel="noopener noreferrer" className="group rounded-xl border bg-white p-4 hover:shadow-sm transition">
+                <div className="text-slate-900 font-medium">connectedfinland.fi</div>
+                <div className="mt-1 text-slate-600 group-hover:text-slate-700">Capteurs bas coûts pour maison et bureau</div>
+              </a>
+              <a href="http://www.codea.cz/" target="_blank" rel="noopener noreferrer" className="group rounded-xl border bg-white p-4 hover:shadow-sm transition">
+                <div className="text-slate-900 font-medium">codea.cz</div>
+                <div className="mt-1 text-slate-600 group-hover:text-slate-700">Capteurs de mesures</div>
+              </a>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-6 flex items-center justify-between gap-3 flex-wrap">
+              <div className="text-xs text-slate-600">Vous êtes fabricant de capteurs ? Rejoignez l’écosystème.</div>
+              <a href="/contact" className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-saco-blue to-saco-turquoise px-4 py-2 text-white text-sm font-medium shadow hover:opacity-95 transition">
+                <Sparkles className="h-4 w-4" /> Demander une inscription
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="text-slate-700">
+          <div className="rounded-2xl bg-slate-50 p-6 border">
+            <div className="grid md:grid-cols-5 gap-6 items-start">
+              <div className="md:col-span-3">
+                <h2 className="text-xl font-semibold text-slate-900">Pourquoi devenir fabricant de capteurs ?</h2>
+                <ul className="mt-2 space-y-1.5 list-disc pl-5">
+                  <li>Marché IoT en forte croissance, besoin massif de capteurs dédiés.</li>
+                  <li>Réseau Sigfox quasi mondial pour des usages LPWAN à faible coût.</li>
+                  <li>Différenciation par qualité, autonomie, robustesse et certification.</li>
+                  <li>Accès à un écosystème actif: intégrateurs, plateformes, opérateurs.</li>
+                </ul>
+              </div>
+              <div className="md:col-span-2">
+                <div className="rounded-xl border bg-white p-5 shadow-sm">
+                  <div className="inline-flex items-center gap-2 text-slate-900 font-medium">
+                    <Sparkles className="h-4 w-4 text-saco-turquoise" /> Opportunités clés
+                  </div>
+                  <ul className="mt-3 space-y-1.5 text-sm">
+                    <li className="flex items-start gap-2"><TrendingUp className="h-4 w-4 text-saco-blue mt-0.5" /> Demande croissante en secteurs énergie, ville, industrie</li>
+                    <li className="flex items-start gap-2"><ShieldCheck className="h-4 w-4 text-saco-blue mt-0.5" /> Différenciation par qualité, autonomie, certification</li>
+                    <li className="flex items-start gap-2"><Users className="h-4 w-4 text-saco-blue mt-0.5" /> Accès à l’écosystème: intégrateurs, plateformes, réseaux</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+
+        {/* CTA */}
+        <section>
+          <div className="rounded-2xl bg-slate-50 border p-6">
+            <h2 className="text-xl font-semibold text-slate-900">Rejoignez notre écosystème IoT</h2>
+            <p className="mt-2 text-slate-700">
+              SACONECT invite toutes les entreprises en quête d'opportunités de croissance et de partenariat dans leurs domaines respectifs à
+              rejoindre son écosystème émergent et innovant, grâce à la technologie IoT Sigfox Low Power Wide Area. Embarquez pour l'IoT et
+              ne vous laissez pas distancer. SACONECT et Sigfox proposent des solutions IoT économiques et prêtes à l'emploi qui réduisent
+              considérablement les coûts de déploiement. Rejoignez‑nous en tant que partenaire et bénéficiez de l'expérience de 72 opérateurs
+              Sigfox dans le monde.
+            </p>
+            <a href="/contact" className="mt-4 inline-flex h-11 px-6 rounded-md bg-gradient-to-r from-saco-blue to-saco-turquoise text-white text-sm font-medium items-center justify-center shadow-sm hover:translate-y-[-1px] hover:shadow-md transition">
+              Demander l'inscription
+            </a>
+          </div>
         </section>
       </Container>
     </main>

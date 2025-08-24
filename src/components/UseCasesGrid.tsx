@@ -3,9 +3,9 @@ import Image from 'next/image'
 import { Sprout, Truck, Factory, Store, Home as HomeIcon, Building2, Landmark, Zap, ChevronRight } from 'lucide-react'
 const USE_CASES = [
   { href: '/solutions/smart-agriculture', title: 'Smart Agriculture', desc: 'Capteurs, irrigation intelligente, qualité des sols.', img: 'https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?q=80&w=1600&auto=format&fit=crop' },
-  { href: '/solutions/smart-logistique', title: 'Smart Logistique', desc: 'Suivi de flotte, chaîne du froid, traçabilité.', img: 'https://images.unsplash.com/photo-1554631221-f9603e6808be?q=80&w=1600&auto=format&fit=crop' },
-  { href: '/solutions/smart-industrie', title: 'Smart Industrie', desc: 'Maintenance prédictive, sécurité et productivité.', img: 'https://images.unsplash.com/photo-1581092580485-4c62f4d7e525?q=80&w=1600&auto=format&fit=crop' },
-  { href: '/solutions/smart-commerce', title: 'Smart Commerce', desc: 'Comptage, monitoring énergie et environnement.', img: 'https://images.unsplash.com/photo-1515165562835-c3b8c8f3a3ea?q=80&w=1600&auto=format&fit=crop' },
+  { href: '/solutions/smart-logistique', title: 'Smart Logistics', desc: 'Suivi de flotte, chaîne du froid, traçabilité.', img: 'https://images.unsplash.com/photo-1554631221-f9603e6808be?q=80&w=1600&auto=format&fit=crop' },
+  { href: '/solutions/smart-industrie', title: 'Smart Industry', desc: 'Maintenance prédictive, sécurité et productivité.', img: 'https://images.unsplash.com/photo-1581092580485-4c62f4d7e525?q=80&w=1600&auto=format&fit=crop' },
+  { href: '/solutions/smart-retail', title: 'Smart Retail', desc: 'Comptage, monitoring énergie et environnement.', img: 'https://images.unsplash.com/photo-1515165562835-c3b8c8f3a3ea?q=80&w=1600&auto=format&fit=crop' },
   { href: '/solutions/smart-home', title: 'Smart Home', desc: 'Sécurité, confort, maîtrise énergétique.', img: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1600&auto=format&fit=crop' },
   { href: '/solutions/smart-building', title: 'Smart Building', desc: 'Pilotage et supervision des bâtiments.', img: 'https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop' },
   { href: '/solutions/smart-city', title: 'Smart City', desc: 'Ville connectée: stationnement, éclairage, déchets.', img: 'https://images.unsplash.com/photo-1465447142348-e9952c393450?q=80&w=1600&auto=format&fit=crop' },
@@ -23,10 +23,10 @@ export default function UseCasesGrid() {
               <span className="h-1.5 w-1.5 rounded-full bg-saco-turquoise" />
               Cas d’usage
             </span>
-            <h2 className="mt-2 text-xl md:text-2xl font-semibold text-slate-900">Des applications concrètes</h2>
-            <p className="text-slate-600 text-sm mt-1">Découvrez où nos solutions IoT apportent un impact immédiat.</p>
+            <h2 className="mt-2 text-xl md:text-2xl font-semibold text-slate-900">Cas d'usage</h2>
+            <p className="text-slate-600 text-sm mt-1">L’IoT ouvre un large éventail d’applications. Découvrez quelques cas concrets et leurs bénéfices.</p>
           </div>
-          <a href="/solutions" className="hidden sm:inline-flex h-10 px-4 rounded-md bg-saco-blue text-white text-sm items-center justify-center shadow-sm shadow-saco-blue/30 hover:translate-y-[-1px] hover:shadow-md hover:shadow-saco-blue/30 transition">Voir toutes les solutions</a>
+          <a href="/solutions" className="hidden sm:inline-flex h-11 px-5 rounded-md bg-saco-blue text-white text-sm items-center justify-center shadow-sm shadow-saco-blue/30 hover:translate-y-[-1px] hover:shadow-md hover:shadow-saco-blue/30 transition">En savoir plus <ChevronRight className="h-4 w-4 ml-2" /></a>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {items.map((s) => {
@@ -47,7 +47,7 @@ export default function UseCasesGrid() {
                           if (s.href.includes('smart-agriculture')) return <Sprout className="h-4 w-4 text-saco-turquoise" />
                           if (s.href.includes('smart-logistique')) return <Truck className="h-4 w-4 text-saco-turquoise" />
                           if (s.href.includes('smart-industrie')) return <Factory className="h-4 w-4 text-saco-turquoise" />
-                          if (s.href.includes('smart-commerce')) return <Store className="h-4 w-4 text-saco-turquoise" />
+                          if (s.href.includes('smart-retail')) return <Store className="h-4 w-4 text-saco-turquoise" />
                           if (s.href.includes('smart-home')) return <HomeIcon className="h-4 w-4 text-saco-turquoise" />
                           if (s.href.includes('smart-building')) return <Building2 className="h-4 w-4 text-saco-turquoise" />
                           if (s.href.includes('smart-city')) return <Landmark className="h-4 w-4 text-saco-turquoise" />
@@ -68,7 +68,7 @@ export default function UseCasesGrid() {
           )})}
         </div>
         <div className="sm:hidden mt-6">
-          <a href="/solutions" className="inline-flex h-10 px-4 rounded-md bg-saco-blue text-white text-sm w-full items-center justify-center shadow-sm shadow-saco-blue/30 hover:translate-y-[-1px] hover:shadow-md hover:shadow-saco-blue/30 transition">Voir toutes les solutions</a>
+          <a href="/solutions" className="inline-flex h-11 px-5 rounded-md bg-saco-blue text-white text-sm w-full items-center justify-center shadow-sm shadow-saco-blue/30 hover:translate-y-[-1px] hover:shadow-md hover:shadow-saco-blue/30 transition">En savoir plus <ChevronRight className="h-4 w-4 ml-2" /></a>
         </div>
       </Container>
     </section>

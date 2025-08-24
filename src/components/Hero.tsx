@@ -32,17 +32,29 @@ export function Hero() {
   const [index, setIndex] = useState(0)
   const [animating, setAnimating] = useState(false)
   const [progress, setProgress] = useState(0) // 0..100
+  const [paused, setPaused] = useState(false)
+  const [reduced, setReduced] = useState(false)
   const touchStartX = useRef<number | null>(null)
   const touchDeltaX = useRef(0)
   const lastChangeRef = useRef<number>(Date.now())
   const isAnimatingRef = useRef<boolean>(false)
   const DURATION = 5000
 
+  // reduced motion preference
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setReduced(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+
   // autoplay + progress (single interval on mount)
   useEffect(() => {
     lastChangeRef.current = Date.now()
     setProgress(0)
     const id = setInterval(() => {
+      if (paused) return // when paused by hover, do nothing
       const elapsed = Date.now() - lastChangeRef.current
       if (elapsed >= DURATION && !isAnimatingRef.current) {
         next()
@@ -53,7 +65,7 @@ export function Hero() {
       }
     }, 50)
     return () => clearInterval(id)
-  }, [])
+  }, [paused])
 
   // keyboard navigation
   useEffect(() => {
@@ -213,6 +225,11 @@ export function Hero() {
           100% { transform: scale(1.08) translateZ(0); }
         }
         .animate-kenburns { animation: kenburns 6s ease-out both; }
+        @media (prefers-reduced-motion: reduce) {
+          .animate-kenburns { animation: none; }
+          .animate-textIn { animation: none; }
+          .animate-subIn { animation: none; }
+        }
         @keyframes textIn {
           0% { opacity: 0; transform: translateY(12px); }
           100% { opacity: 1; transform: translateY(0); }

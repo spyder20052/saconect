@@ -2,14 +2,14 @@ import Image from 'next/image'
 import { Sprout, Truck, Factory, Store, Home as HomeIcon, Building2, Landmark, Zap, ChevronRight } from 'lucide-react'
 
 const SOLUTIONS = [
-  { slug: 'smart-agriculture', title: 'Smart Agriculture', desc: 'Capteurs, irrigation, qualité des sols.', img: 'https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?q=80&w=1600&auto=format&fit=crop' },
-  { slug: 'smart-logistique', title: 'Smart Logistique', desc: 'Suivi de flotte, actifs, chaîne logistique.', img: 'https://images.unsplash.com/photo-1554631221-f9603e6808be?q=80&w=1600&auto=format&fit=crop' },
-  { slug: 'smart-industrie', title: 'Smart Industrie', desc: 'Maintenance prédictive, télérelève, supervision.', img: 'https://images.unsplash.com/photo-1581092580485-4c62f4d7e525?q=80&w=1600&auto=format&fit=crop' },
-  { slug: 'smart-commerce', title: 'Smart Commerce', desc: 'Suivi froid, stocks, conditions d’environnement.', img: 'https://images.unsplash.com/photo-1515165562835-c3b8c8f3a3ea?q=80&w=1600&auto=format&fit=crop' },
-  { slug: 'smart-home', title: 'Smart Home', desc: 'Sécurité, confort, efficacité énergétique.', img: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1600&auto=format&fit=crop' },
-  { slug: 'smart-building', title: 'Smart Building', desc: 'Bâtiments intelligents, monitoring et optimisation.', img: 'https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop' },
-  { slug: 'smart-city', title: 'Smart City', desc: 'Mobilité, éclairage, déchets, environnement.', img: 'https://images.unsplash.com/photo-1465447142348-e9952c393450?q=80&w=1600&auto=format&fit=crop' },
-  { slug: 'smart-energies', title: 'Smart Energies', desc: 'Compteurs, réseaux, détection de fuites.', img: 'https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?q=80&w=1600&auto=format&fit=crop' },
+  { slug: 'smart-agriculture', title: 'Agriculture intelligente', desc: 'Capteurs, irrigation, qualité des sols.', img: 'https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?q=80&w=1600&auto=format&fit=crop' },
+  { slug: 'smart-logistique', title: 'Logistique intelligente', desc: 'Suivi de flotte, actifs, chaîne logistique.', img: 'https://images.unsplash.com/photo-1554631221-f9603e6808be?q=80&w=1600&auto=format&fit=crop' },
+  { slug: 'smart-industrie', title: 'Industrie intelligente', desc: 'Maintenance prédictive, télérelève, supervision.', img: 'https://images.unsplash.com/photo-1581092580485-4c62f4d7e525?q=80&w=1600&auto=format&fit=crop' },
+  { slug: 'smart-retail', title: 'Smart Retail', desc: 'Suivi froid, stocks, conditions d’environnement.', img: 'https://images.unsplash.com/photo-1515165562835-c3b8c8f3a3ea?q=80&w=1600&auto=format&fit=crop' },
+  { slug: 'smart-home', title: 'Maison intelligente', desc: 'Sécurité, confort, efficacité énergétique.', img: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1600&auto=format&fit=crop' },
+  { slug: 'smart-building', title: 'Bâtiment intelligent', desc: 'Bâtiments intelligents, monitoring et optimisation.', img: 'https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1600&auto=format&fit=crop' },
+  { slug: 'smart-city', title: 'Ville intelligente', desc: 'Mobilité, éclairage, déchets, environnement.', img: 'https://images.unsplash.com/photo-1465447142348-e9952c393450?q=80&w=1600&auto=format&fit=crop' },
+  { slug: 'smart-energies', title: 'Énergie intelligente', desc: 'Compteurs, réseaux, détection de fuites.', img: 'https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?q=80&w=1600&auto=format&fit=crop' },
 ]
 
 export function SolutionsGrid() {
@@ -34,7 +34,7 @@ export function SolutionsGrid() {
                           case 'smart-agriculture': return <Sprout className="h-4 w-4 text-saco-turquoise" />
                           case 'smart-logistique': return <Truck className="h-4 w-4 text-saco-turquoise" />
                           case 'smart-industrie': return <Factory className="h-4 w-4 text-saco-turquoise" />
-                          case 'smart-commerce': return <Store className="h-4 w-4 text-saco-turquoise" />
+                          case 'smart-retail': return <Store className="h-4 w-4 text-saco-turquoise" />
                           case 'smart-home': return <HomeIcon className="h-4 w-4 text-saco-turquoise" />
                           case 'smart-building': return <Building2 className="h-4 w-4 text-saco-turquoise" />
                           case 'smart-city': return <Landmark className="h-4 w-4 text-saco-turquoise" />

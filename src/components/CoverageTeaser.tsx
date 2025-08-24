@@ -16,10 +16,11 @@ export default function CoverageTeaser() {
               <span className="h-1.5 w-1.5 rounded-full bg-saco-turquoise" />
               Couverture
             </span>
-            <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-slate-900">Un réseau IoT fiable en Afrique de l’Ouest</h2>
-            <p className="text-slate-600 mt-3 max-w-prose">Nous avons déjà atteint une large couverture de population en Côte d’Ivoire, au Sénégal et au Ghana et continuons d’étendre le réseau pour répondre aux besoins de nos clients et partenaires.</p>
+            <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-slate-900">Couverture</h2>
+            <p className="text-slate-600 mt-3 max-w-prose">SACONECT s'engage résolument à fournir un réseau fiable et de haute qualité pour répondre aux besoins de ses utilisateurs et partenaires en matière de solutions IoT.</p>
+            <p className="text-slate-600 mt-2 max-w-prose">En un an de montée en puissance intensive, SACONECT a atteint la couverture de la grande majorité de la population en Côte d'Ivoire, au Sénégal et au Ghana.</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="/couverture" className="inline-flex h-11 px-5 rounded-md bg-saco-blue text-white items-center justify-center shadow-sm shadow-saco-blue/30 hover:translate-y-[-1px] hover:shadow-md hover:shadow-saco-blue/30 transition">Voir la carte</a>
+              <a href="/couverture" className="inline-flex h-11 px-5 rounded-md bg-saco-blue text-white items-center justify-center shadow-sm shadow-saco-blue/30 hover:translate-y-[-1px] hover:shadow-md hover:shadow-saco-blue/30 transition">En savoir plus <ChevronRight className="h-4 w-4 ml-2" /></a>
               <a href="/contact" className="inline-flex h-11 px-5 rounded-md border border-saco-blue/50 text-saco-blue items-center justify-center hover:border-saco-blue hover:bg-saco-blue/5 transition">Nous contacter</a>
             </div>
           </div>

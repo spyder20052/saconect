@@ -21,8 +21,7 @@ export default function AboutSection() {
               SACONECT, filiale du groupe <span className="bg-clip-text text-transparent bg-gradient-to-r from-saco-blue to-saco-turquoise">SAGAM INTERNATIONAL</span>
             </h2>
             <p className="mt-4 text-slate-700 leading-relaxed">
-              À travers un réseau basé sur la technologie <strong>Sigfox</strong>, nous déployons des solutions IoT innovantes au Sénégal, en Côte d’Ivoire et au Ghana.
-              Nos connectivités <em>bas débit, longue portée et basse consommation</em> ouvrent de nouvelles perspectives pour réduire vos coûts d’opération et accélérer votre prise de décision.
+              SACONECT, filiale du groupe SAGAM INTERNATIONAL, grâce à son réseau basé sur la technologie SIGFOX, permet la mise en œuvre de nombreuses solutions IoT innovantes au Sénégal, en Côte d'Ivoire et au Ghana. Les solutions de connectivité bas débit, longue portée et basse consommation proposées par SACONECT offrent de nouvelles perspectives en termes de réduction des coûts d'exploitation pour les entreprises de tous les secteurs d'activité.
             </p>
 
             {/* Benefits */}

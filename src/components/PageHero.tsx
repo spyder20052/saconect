@@ -14,7 +14,7 @@ type Props = {
 
 export default function PageHero({ title, subtitle, image, backHref, backLabel }: Props) {
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       <div className="relative h-[320px] md:h-[420px]">
         <Image
           src={image || 'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=2000&auto=format&fit=crop'}

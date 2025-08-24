@@ -20,13 +20,8 @@ export default function NewsletterSection() {
               <span className="h-1.5 w-1.5 rounded-full bg-saco-turquoise" />
               Newsletter
             </span>
-            <h2 id="newsletter-heading" className="mt-2 text-2xl md:text-3xl font-semibold text-slate-900">
-              Des insights IoT utiles, sans spam
-            </h2>
-            <p className="mt-2 text-slate-600 max-w-prose">
-              Un email concis, 1×/semaine: cas d’usage, bonnes pratiques et actus réseau.
-              Désinscription en un clic.
-            </p>
+            <h2 id="newsletter-heading" className="mt-2 text-2xl md:text-3xl font-semibold text-slate-900">Abonnez-vous à notre newsletter.</h2>
+            <p className="mt-2 text-slate-600 max-w-prose">Recevez toutes nos actualités chaque semaine dans votre boîte mail.</p>
             <ul className="mt-4 space-y-2 text-sm text-slate-700">
               <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-saco-turquoise" />Conseils actionnables pour vos déploiements</li>
               <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-saco-turquoise" />Veille réseau et couverture</li>
@@ -62,8 +57,8 @@ export default function NewsletterSection() {
           {/* Form card enlarged */}
           <div className="md:col-span-7">
             <div className="rounded-2xl border border-slate-200 bg-white/80 backdrop-blur p-6 md:p-8 shadow-sm">
-              <h3 className="text-lg md:text-xl font-semibold text-slate-900">Restez informé</h3>
-              <p className="mt-1 text-sm text-slate-600">Recevez chaque semaine nos meilleurs cas d’usage et conseils IoT.</p>
+              <h3 className="text-lg md:text-xl font-semibold text-slate-900">Abonnez-vous à notre newsletter.</h3>
+              <p className="mt-1 text-sm text-slate-600">Recevez toutes nos actualités chaque semaine dans votre boîte mail.</p>
 
               <div className="mt-4">
                 <NewsletterForm />

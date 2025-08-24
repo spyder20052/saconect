@@ -1,6 +1,9 @@
 import PageHero from '@/components/PageHero'
 import { SolutionsGrid } from '@/components/SolutionsGrid'
 import Container from '@/components/Container'
+import WhySigfox from '@/components/WhySigfox'
+import NewsletterSection from '@/components/NewsletterSection'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Solutions | SACONECT',
@@ -12,8 +15,8 @@ export default function SolutionsPage() {
     <main>
       {/* Hero */}
       <PageHero
-        title="Solutions IoT"
-        subtitle="Des cas d’usage concrets, de la captation à la donnée exploitable."
+        title="Solutions"
+        subtitle="Solutions IoT pour créer et contrôler vos objets connectés."
         image="https://images.unsplash.com/photo-1496259883144-512177a2d51b?q=80&w=1600&auto=format&fit=crop"
       />
 
@@ -21,36 +24,38 @@ export default function SolutionsPage() {
       <section className="relative bg-white border-t">
         <Container className="py-12">
           <h2 className="text-xl md:text-2xl font-semibold text-slate-900">Nos solutions</h2>
+          <p className="text-slate-600 text-sm mt-1 max-w-3xl">
+            La capacité de l'IoT à fournir des informations de capteurs et à permettre la communication entre les appareils est à l'origine d'un large
+            éventail d'applications. Voici quelques-unes des applications les plus populaires et leurs fonctionnalités.
+          </p>
           <div className="mt-6">
             <SolutionsGrid />
           </div>
         </Container>
       </section>
 
-      {/* Pourquoi choisir ? */}
-      <section className="relative bg-slate-50 border-t">
+      {/* Pourquoi choisir SIGFOX ? */}
+      <WhySigfox />
+
+      {/* Partnership CTA */}
+      <section className="bg-white border-t">
         <Container className="py-12">
-          <h2 className="text-xl md:text-2xl font-semibold text-slate-900">Pourquoi choisir SACONECT ?</h2>
-          <div className="mt-4 grid gap-6 md:grid-cols-2">
-            <div className="rounded-xl bg-white border border-slate-200 p-5">
-              <div className="text-saco-blue font-semibold">LPWAN adaptés à l’IoT</div>
-              <p className="mt-1 text-sm text-slate-600">Réseau bas débit, longue portée et très faible consommation pour connecter des capteurs sur de grandes distances.</p>
-            </div>
-            <div className="rounded-xl bg-white border border-slate-200 p-5">
-              <div className="text-saco-blue font-semibold">Couverture et expertise</div>
-              <p className="mt-1 text-sm text-slate-600">Présence multi-pays et retour d’expérience terrain via notre écosystème de déploiement.</p>
-            </div>
-            <div className="rounded-xl bg-white border border-slate-200 p-5">
-              <div className="text-saco-blue font-semibold">Fiabilité et scalabilité</div>
-              <p className="mt-1 text-sm text-slate-600">Technologies éprouvées pour des millions de messages/jour et des milliers d’objets connectés.</p>
-            </div>
-            <div className="rounded-xl bg-white border border-slate-200 p-5">
-              <div className="text-saco-blue font-semibold">Accompagnement</div>
-              <p className="mt-1 text-sm text-slate-600">De la captation à la donnée exploitable: intégration, tableaux de bord et support.</p>
+          <div className="rounded-2xl border bg-gradient-to-br from-saco-blue/5 to-saco-turquoise/5 p-6 md:p-8">
+            <div className="md:flex items-center justify-between gap-6">
+              <div>
+                <h3 className="text-xl font-semibold text-slate-900">Postulez pour un partenariat</h3>
+                <p className="text-slate-700 mt-1">Rejoignez notre écosystème d’intégrateurs et partenaires pour construire des solutions IoT innovantes.</p>
+              </div>
+              <Link href="/contact" className="mt-4 md:mt-0 inline-flex h-11 px-5 rounded-md bg-saco-blue text-white text-sm font-medium items-center justify-center whitespace-nowrap hover:translate-y-[-1px] transition">
+                Devenir partenaire
+              </Link>
             </div>
           </div>
         </Container>
       </section>
+
+      {/* Newsletter */}
+      <NewsletterSection />
     </main>
   )
 }

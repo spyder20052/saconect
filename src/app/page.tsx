@@ -7,6 +7,7 @@ import StatsBar from '../components/StatsBar'
 import AboutSection from '../components/AboutSection'
 import PartnersSection from '../components/PartnersSection'
 import NewsletterSection from '../components/NewsletterSection'
+import JoinEcosystemSection from '../components/JoinEcosystemSection'
 
 export default function HomePage() {
   return (
@@ -23,6 +24,9 @@ export default function HomePage() {
 
       {/* Use cases grid */}
       <UseCasesGrid />
+
+      {/* Join Ecosystem */}
+      <JoinEcosystemSection />
 
       {/* Coverage teaser */}
       <CoverageTeaser />

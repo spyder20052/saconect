@@ -39,7 +39,7 @@ export function Footer() {
       <Container className="py-12 relative">
         <div className="grid gap-8 md:grid-cols-12 text-sm">
           {/* Brand */}
-          <div className="md:col-span-4 reveal-up" style={{ transitionDelay: '60ms' }}>
+          <div className="md:col-span-4 reveal-up is-visible" style={{ transitionDelay: '60ms' }}>
             <div className="flex items-center gap-2 mb-3">
               <Image src="/logo-white.svg" alt="SACONECT" width={120} height={24} />
             </div>
@@ -52,7 +52,7 @@ export function Footer() {
           </div>
 
           {/* Sitemap */}
-          <div className="md:col-span-2 reveal-up" style={{ transitionDelay: '120ms' }}>
+          <div className="md:col-span-2 reveal-up is-visible" style={{ transitionDelay: '120ms' }}>
             <div className="text-slate-200 font-medium mb-3">Sitemap</div>
             <ul className="space-y-2">
               <li>
@@ -89,7 +89,7 @@ export function Footer() {
           </div>
 
           {/* Legal */}
-          <div className="md:col-span-3 reveal-up" style={{ transitionDelay: '180ms' }}>
+          <div className="md:col-span-3 reveal-up is-visible" style={{ transitionDelay: '180ms' }}>
             <div className="text-slate-200 font-medium mb-3">Légal</div>
             <ul className="space-y-2">
               <li>
@@ -120,10 +120,16 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="md:col-span-3 reveal-up" style={{ transitionDelay: '240ms' }}>
+          <div className="md:col-span-3 reveal-up is-visible" style={{ transitionDelay: '240ms' }}>
             <div className="text-slate-200 font-medium mb-3">Contact</div>
-            <p className="text-slate-400 inline-flex items-center gap-2"><Mail className="h-4 w-4 text-saco-turquoise/80" /> contact@saconect.com</p>
-            <p className="text-slate-400 mt-1 inline-flex items-center gap-2"><Phone className="h-4 w-4 text-saco-turquoise/80" /> +212 6 00 00 00 00</p>
+            <p className="text-slate-400 inline-flex items-center gap-2">
+              <Mail className="h-4 w-4 text-saco-turquoise/80" />
+              <a href="mailto:contact@saconect.com" className="hover:text-white">contact@saconect.com</a>
+            </p>
+            <p className="text-slate-400 mt-1 inline-flex items-center gap-2">
+              <Phone className="h-4 w-4 text-saco-turquoise/80" />
+              <a href="tel:+212600000000" className="hover:text-white" aria-label="Appeler le +212 6 00 00 00 00">+212 6 00 00 00 00</a>
+            </p>
           </div>
         </div>
       </Container>

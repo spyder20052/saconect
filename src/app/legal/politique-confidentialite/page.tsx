@@ -11,47 +11,23 @@ export default function PolitiqueConfidentialitePage() {
     <main>
       <PageHero
         title="Politique de confidentialité"
-        subtitle="Cette politique explique comment nous collectons, utilisons et protégeons vos données personnelles."
         image="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2000&auto=format&fit=crop"
       />
 
-      <Container className="py-10 space-y-8">
-        <div>
-          <h2 className="text-lg font-semibold text-slate-900">Données collectées</h2>
-          <p className="mt-2 text-slate-700">
-            Formulaire de contact (nom, e‑mail, message) et données techniques de navigation (logs, cookies).
+      <Container className="py-10">
+        <article className="prose prose-slate max-w-none">
+          <h2 className="sr-only">Politique de confidentialité</h2>
+          <p>
+            Le site www.saconect.com collecte et traite vos données personnelles conformément aux dispositions du Règlement général sur la protection des
+            données et de la législation française sur la protection des données. Nous vous informons que des cookies peuvent être utilisés pour suivre
+            votre navigation sur le site www.saconect.com. Chaque formulaire et téléservice du site www.saconect.com limite la collecte des données
+            personnelles au strict nécessaire (minimisation des données) et indique notamment
           </p>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-semibold text-slate-900">Finalités et base légale</h2>
-          <p className="mt-2 text-slate-700">
-            Réponse aux demandes (intérêt légitime/exécution précontractuelle), amélioration du service (intérêt légitime),
-            obligations légales (conservation minimale).
+          <p>
+            Pour plus d'informations ou pour exercer vos droits concernant vos données personnelles détenues par notre société, vous pouvez nous
+            contacter.
           </p>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-semibold text-slate-900">Durées de conservation</h2>
-          <p className="mt-2 text-slate-700">
-            Les données sont conservées pour la durée strictement nécessaire aux finalités ci‑dessus, puis supprimées ou anonymisées.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-semibold text-slate-900">Vos droits</h2>
-          <p className="mt-2 text-slate-700">
-            Accès, rectification, effacement, limitation, opposition, portabilité. Vous pouvez exercer vos droits à l’adresse :
-            <br />contact@saconect.com (DPO : À compléter).
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-semibold text-slate-900">Sécurité</h2>
-          <p className="mt-2 text-slate-700">
-            Nous mettons en place des mesures techniques et organisationnelles pour protéger vos données contre les accès non autorisés.
-          </p>
-        </div>
+        </article>
       </Container>
     </main>
   )

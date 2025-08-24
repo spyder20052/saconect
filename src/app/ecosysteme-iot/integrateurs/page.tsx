@@ -1,6 +1,6 @@
 import PageHero from '@/components/PageHero'
 import Container from '@/components/Container'
-import { ClipboardCheck, Boxes, Send, Headphones, BadgeCheck, Activity, BookOpen, Building2, Factory, Landmark, Bolt, Truck, Stethoscope } from 'lucide-react'
+import { ClipboardCheck, Boxes, Send, Headphones, BadgeCheck, Activity, BookOpen, Building2, Factory, Landmark, Bolt, Truck, Stethoscope, ExternalLink, Sparkles } from 'lucide-react'
 
 export const metadata = {
   title: 'Intégrateurs de solutions IoT | SACONECT',
@@ -19,49 +19,101 @@ export default function IntegrateursPage() {
       />
 
       <Container className="py-12 space-y-12">
+        {/* Le rôle des intégrateurs de solutions IoT */}
         <section>
-          <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
-            <span className="h-8 w-8 rounded-md bg-saco-blue/10 text-saco-blue grid place-items-center">
-              <ClipboardCheck className="h-4 w-4" />
-            </span>
-            Notre approche
-          </h2>
-          <ol className="mt-3 text-slate-700 space-y-2">
-            <li className="flex items-center gap-2"><ClipboardCheck className="h-4 w-4 text-saco-blue" /> Étude de besoin, cadrage et POC</li>
-            <li className="flex items-center gap-2"><Boxes className="h-4 w-4 text-saco-blue" /> Conception solution et choix des partenaires</li>
-            <li className="flex items-center gap-2"><Send className="h-4 w-4 text-saco-blue" /> Déploiement terrain et formation</li>
-            <li className="flex items-center gap-2"><Headphones className="h-4 w-4 text-saco-blue" /> Exploitation, support et amélioration continue</li>
-          </ol>
+          <div className="relative overflow-hidden rounded-2xl border bg-white shadow-sm">
+            <div className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-saco-blue to-saco-turquoise" />
+            <div className="p-6 md:p-8">
+              <div className="md:flex items-start justify-between gap-8">
+                <div className="flex-1">
+                  <h2 className="text-xl font-semibold text-slate-900">Le rôle des intégrateurs de solutions IoT</h2>
+                  <p className="mt-2 text-slate-700">
+                    L'IoT a dépassé le « quoi » pour se concentrer sur le « comment », et cela ne se produira pas à grande échelle sans une
+                    implication massive des intégrateurs systèmes. L'écosystème IoT est multi‑entités ; aucun fournisseur IoT ne peut proposer une
+                    solution complète, incluant réseau, plateforme, logique métier et applications. Si une plateforme propose des appareils, votre
+                    application IoT sera limitée à leurs capacités spécifiques. Il en va de même pour les autres fournisseurs : si vous démarrez
+                    avec un seul appareil, votre plateforme sera quelque peu limitée.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {['Conception', 'Déploiement', 'APIs & Intégrations', 'Support', 'Pilotage'].map((chip) => (
+                      <span key={chip} className="text-xs rounded-md bg-slate-50 border px-2.5 py-1 text-slate-700">{chip}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-6 md:mt-0">
+                  <div className="rounded-xl border bg-gradient-to-br from-saco-blue/5 to-saco-turquoise/10 px-4 py-3 text-sm text-slate-700">
+                    <div className="inline-flex items-center gap-2 font-medium text-slate-900"><Sparkles className="h-4 w-4 text-saco-turquoise" /> Bénéfices</div>
+                    <ul className="mt-2 list-disc pl-5 space-y-1">
+                      <li>Approche solution end‑to‑end</li>
+                      <li>Interopérabilité et évolutivité</li>
+                      <li>Réduction du risque projet</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
+        {/* Ils font partie de notre écosystème IoT */}
         <section>
-          <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
-            <span className="h-8 w-8 rounded-md bg-saco-blue/10 text-saco-blue grid place-items-center">
-              <BadgeCheck className="h-4 w-4" />
-            </span>
-            Engagements
-          </h2>
-          <ul className="mt-3 text-slate-700 space-y-2">
-            <li className="flex items-center gap-2"><Activity className="h-4 w-4 text-saco-blue" /> Qualité de service et suivi des SLA</li>
-            <li className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-saco-blue" /> Transparence et pilotage par la valeur</li>
-            <li className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-saco-blue" /> Documentation et transfert de compétences</li>
-          </ul>
+          <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-r from-saco-blue/5 via-saco-turquoise/5 to-white p-6 md:p-8 shadow-sm">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900">Ils font partie de notre écosystème IoT</h3>
+                <p className="mt-1 text-slate-700 text-sm">Exemples d'intégrateurs et partenaires (placeholders à remplacer).</p>
+              </div>
+            </div>
+            <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {new Array(6).fill(0).map((_, i) => (
+                <a key={i} href="#" className="group rounded-xl border bg-white p-4 hover:shadow-sm hover:border-saco-blue/30 transition relative">
+                  <div className="absolute right-3 top-3 text-slate-400 group-hover:text-saco-blue transition" aria-hidden>
+                    <ExternalLink className="h-4 w-4" />
+                  </div>
+                  <div className="text-slate-900 font-medium">Partenaire intégrateur</div>
+                  <div className="mt-1 text-slate-600 text-sm">Conseil, intégration, déploiement</div>
+                </a>
+              ))}
+            </div>
+          </div>
         </section>
 
+        {/* Pourquoi devenir intégrateur de solutions IoT ? */}
         <section>
-          <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
-            <span className="h-8 w-8 rounded-md bg-saco-blue/10 text-saco-blue grid place-items-center">
-              <Building2 className="h-4 w-4" />
-            </span>
-            Domaines d’application
-          </h2>
-          <div className="mt-3 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-slate-700">
-            <div className="border rounded-lg p-4 bg-white inline-flex items-center gap-2"><Building2 className="h-4 w-4 text-saco-blue" /> Smart building</div>
-            <div className="border rounded-lg p-4 bg-white inline-flex items-center gap-2"><Factory className="h-4 w-4 text-saco-blue" /> Industrie & maintenance</div>
-            <div className="border rounded-lg p-4 bg-white inline-flex items-center gap-2"><Landmark className="h-4 w-4 text-saco-blue" /> Ville & territoires</div>
-            <div className="border rounded-lg p-4 bg-white inline-flex items-center gap-2"><Bolt className="h-4 w-4 text-saco-blue" /> Énergie & utilities</div>
-            <div className="border rounded-lg p-4 bg-white inline-flex items-center gap-2"><Truck className="h-4 w-4 text-saco-blue" /> Logistique & supply chain</div>
-            <div className="border rounded-lg p-4 bg-white inline-flex items-center gap-2"><Stethoscope className="h-4 w-4 text-saco-blue" /> Santé & établissements</div>
+          <div className="rounded-2xl bg-slate-50 p-6 border">
+            <h2 className="text-xl font-semibold text-slate-900">Pourquoi devenir intégrateur de solutions IoT&nbsp;?</h2>
+            <p className="mt-2 text-slate-700">
+              Chaque application IoT peut et doit connecter toutes les sources, permettant ainsi l'échange de règles et d'actions et l'accès aux
+              informations corrélées. L'intégrateur système est idéalement placé pour bénéficier d'un accès transparent à plusieurs unités
+              opérationnelles. Les intégrateurs système ont toujours assuré l'intégration avec des systèmes tels que CRM, ERP, BMS ou WMS
+              existants. Les données IoT doivent être intégrées aux systèmes existants pour en tirer le meilleur parti.
+            </p>
+          </div>
+        </section>
+
+        {/* Rejoignez notre Écosystème IoT (CTA) */}
+        <section>
+          <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-saco-blue/10 via-white to-saco-turquoise/10 p-6 md:p-8">
+            <div className="pointer-events-none absolute -top-10 -right-10 h-40 w-40 rounded-full bg-saco-blue/10 blur-2xl" />
+            <div className="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-saco-turquoise/10 blur-2xl" />
+            <div className="relative">
+              <h2 className="text-xl font-semibold text-slate-900 flex items-center gap-2">
+                <span className="h-8 w-8 rounded-md bg-saco-blue/10 text-saco-blue grid place-items-center">
+                  <Sparkles className="h-4 w-4" />
+                </span>
+                Rejoignez notre Écosystème IoT
+              </h2>
+              <p className="mt-2 text-slate-700">
+                SACONECT invite les entreprises en quête de relais de croissance à rejoindre un écosystème innovant autour de l’IoT LPWA.
+                Bénéficiez d’une mise en marché accélérée, d’un réseau de partenaires et d’un accompagnement de bout en bout.
+              </p>
+              <div className="mt-4">
+                <a href="/contact" className="inline-flex items-center gap-2 rounded-lg bg-saco-blue px-4 py-2 text-white hover:bg-saco-blue/90 transition">
+                  Devenir partenaire
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </Container>
